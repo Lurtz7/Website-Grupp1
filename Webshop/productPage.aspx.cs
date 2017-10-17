@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace kontorsprylar
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class pageProduct : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

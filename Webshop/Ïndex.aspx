@@ -15,6 +15,7 @@
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div> 
+            </div>
         <h2>Papper</h2>
             <div class="tableRow">
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
@@ -26,7 +27,7 @@
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
             <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div> 
-        </div>
+        </div></div>
      
     </form>
 </body>
