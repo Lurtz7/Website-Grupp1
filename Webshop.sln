@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop", "Webshop\Webshop.csproj", "{6B54DFC0-A2A4-462F-A9F0-DDE06ED74B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_CSS", "..\kontorsprylar\kontorsprylar\HTML_CSS.csproj", "{B9F3364C-F82F-4DFA-9406-7CECFDD2CCA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_CSS", "kontorsprylar\HTML_CSS.csproj", "{B9F3364C-F82F-4DFA-9406-7CECFDD2CCA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
