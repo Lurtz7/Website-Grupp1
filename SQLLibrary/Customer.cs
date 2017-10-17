@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Webshop
+namespace SQLLibrary
 {
     public class Customer
     {
@@ -28,6 +28,14 @@ namespace Webshop
             SSN = ssn;
             Email = email;
             Password = password;
+        }
+
+        public Customer(int id, string firstname, string lastname, string email)
+        {
+            ID = id;
+            Firstname = firstname;
+            Lastname = lastname;
+            Email = email;
         }
     }
 
