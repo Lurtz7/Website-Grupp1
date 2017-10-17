@@ -124,5 +124,56 @@ namespace SQLLibrary
 
             return customer;
         }
+
+        public static Product CreateProduct(int id, int price, string pictureUrl, int stocknr, int soldnr, string productDescription)
+        {
+
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+                idParam.Value = id;
+                command.Parameters.Add(idParam);
+
+                SqlParameter priceParam = new SqlParameter("@price", SqlDbType.Int);
+                priceParam.Value = price;
+                command.Parameters.Add(priceParam);
+
+                SqlParameter pictureUrlParam = new SqlParameter("@pictureurl", SqlDbType.VarChar);
+                pictureUrlParam.Value = pictureUrl;
+                command.Parameters.Add(pictureUrlParam);
+
+                SqlParameter stocknrParam = new SqlParameter("@stocknr", SqlDbType.Int);
+                stocknrParam.Value = stocknr;
+                command.Parameters.Add(stocknrParam);
+
+                SqlParameter soldnrParam = new SqlParameter("@soldnr", SqlDbType.Int);
+                soldnrParam.Value = soldnr;
+                command.Parameters.Add(soldnrParam);
+
+                SqlParameter productDescriptionParam = new SqlParameter("@productdescription", SqlDbType.VarChar);
+                productDescriptionParam.Value = productDescription;
+                command.Parameters.Add(productDescriptionParam);
+
+                command.CommandText = $"insert into Product (ID, Price, PictureUrl, Stocknr, Soldnr, ProductDescription) values (@id, @price, @pictureurl, @stocknr, @soldnr, @productDescription)";
+                int result = command.ExecuteNonQuery();
+                if (result > 0)
+                    return new Product(id, price, pictureUrl, stocknr, soldnr, productDescription);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
+        }
     }
 }
