@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLLibrary
 {
-    public class Class1
+    public class MySql
     {
     }
 }
