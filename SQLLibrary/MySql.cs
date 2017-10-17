@@ -28,19 +28,34 @@ namespace SQLLibrary
                 SqlCommand sqlCommand = new SqlCommand("AddCustomer", sqlConnection);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                SqlParameter paramFirstname = new SqlParameter("@firstname", System.Data.SqlDbType.VarChar);
+                SqlParameter paramFirstname = new SqlParameter("@Firstname", System.Data.SqlDbType.VarChar);
+                paramFirstname.Size = 32;
                 paramFirstname.Value = customer.Firstname;
                 sqlCommand.Parameters.Add(paramFirstname);
 
-                SqlParameter paramLastname = new SqlParameter("@lastname", System.Data.SqlDbType.VarChar);
+                SqlParameter paramLastname = new SqlParameter("@Lastname", System.Data.SqlDbType.VarChar);
+                paramLastname.Size = 32;
                 paramLastname.Value = customer.Lastname;
                 sqlCommand.Parameters.Add(paramLastname);
 
-                SqlParameter paramSSN = new SqlParameter("@ssn", System.Data.SqlDbType.VarChar);
+                SqlParameter paramSSN = new SqlParameter("@SSN", System.Data.SqlDbType.VarChar);
+                paramSSN.Size = 13;
                 paramSSN.Value = customer.SSN;
                 sqlCommand.Parameters.Add(paramSSN);
 
-                SqlParameter paramCID = new SqlParameter("@CID", System.Data.SqlDbType.VarChar);
+                SqlParameter paramEmail = new SqlParameter("@Email", System.Data.SqlDbType.VarChar);
+                paramEmail.Size = 50;
+                paramEmail.Value = customer.Email;
+                sqlCommand.Parameters.Add(paramEmail);
+
+                SqlParameter paramPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar);
+                paramPassword.Size = 50;
+                paramPassword.Value = customer.Password;
+                sqlCommand.Parameters.Add(paramPassword);
+
+           
+
+                SqlParameter paramCID = new SqlParameter("@CID", System.Data.SqlDbType.Int);
                 paramCID.Direction = System.Data.ParameterDirection.Output;
                 sqlCommand.Parameters.Add(paramCID);
 

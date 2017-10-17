@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SQLLibrary;
 
 namespace Webshop
 {
@@ -13,5 +14,16 @@ namespace Webshop
         {
 
         }
+
+        protected void btnCreateCust_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(0, textBoxFirstname.Text, textBoxLastname.Text, textBoxSSN.Text, textBoxEmail.Text, textBoxPassword.Text);
+
+           int CID = MySql.CreateContact(customer);
+
+           //int AID = MySql.CreateAdress(Adress);
+            
+        }
+
     }
 }

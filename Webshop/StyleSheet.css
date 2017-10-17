@@ -39,3 +39,48 @@ h2{
     font-size: 14px;
 }
 
+#TableDiv {
+    font-family: 'Javanese Text' background-color: black;
+    color: navy;
+    background-color: lavender;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding: 2px 2px 2px 2px;
+}
+
+.TableAdress {
+    width: 75%;
+}
+.TableEmail {
+    width: 75%;
+}
+#textBoxEmail {
+    width: 70%;
+}
+#textBoxEmailVerify {
+    width: 70%;
+}
+
+#textBoxPassword {
+    width: 70%;
+    
+}
+
+#textBoxPasswordVerify {
+    width: 70%;
+}
+
+#textBoxStreet {
+    width: 70%;
+}
+
+
+
+#textBoxCity {
+    width: 70%;
+}
+
+#textBoxCountry {
+    width: 70%;
+}
