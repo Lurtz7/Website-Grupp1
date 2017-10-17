@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLLibrary
 {
-    class Product
+    public class Product
     {
         public int ID { get; set; }
         public int Price { get; set; }

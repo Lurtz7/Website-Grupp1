@@ -28,19 +28,34 @@ namespace SQLLibrary
                 SqlCommand sqlCommand = new SqlCommand("AddCustomer", sqlConnection);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                SqlParameter paramFirstname = new SqlParameter("@firstname", System.Data.SqlDbType.VarChar);
+                SqlParameter paramFirstname = new SqlParameter("@Firstname", System.Data.SqlDbType.VarChar);
+                paramFirstname.Size = 32;
                 paramFirstname.Value = customer.Firstname;
                 sqlCommand.Parameters.Add(paramFirstname);
 
-                SqlParameter paramLastname = new SqlParameter("@lastname", System.Data.SqlDbType.VarChar);
+                SqlParameter paramLastname = new SqlParameter("@Lastname", System.Data.SqlDbType.VarChar);
+                paramLastname.Size = 32;
                 paramLastname.Value = customer.Lastname;
                 sqlCommand.Parameters.Add(paramLastname);
 
-                SqlParameter paramSSN = new SqlParameter("@ssn", System.Data.SqlDbType.VarChar);
+                SqlParameter paramSSN = new SqlParameter("@SSN", System.Data.SqlDbType.VarChar);
+                paramSSN.Size = 13;
                 paramSSN.Value = customer.SSN;
                 sqlCommand.Parameters.Add(paramSSN);
 
-                SqlParameter paramCID = new SqlParameter("@CID", System.Data.SqlDbType.VarChar);
+                SqlParameter paramEmail = new SqlParameter("@Email", System.Data.SqlDbType.VarChar);
+                paramEmail.Size = 50;
+                paramEmail.Value = customer.Email;
+                sqlCommand.Parameters.Add(paramEmail);
+
+                SqlParameter paramPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar);
+                paramPassword.Size = 50;
+                paramPassword.Value = customer.Password;
+                sqlCommand.Parameters.Add(paramPassword);
+
+           
+
+                SqlParameter paramCID = new SqlParameter("@CID", System.Data.SqlDbType.Int);
                 paramCID.Direction = System.Data.ParameterDirection.Output;
                 sqlCommand.Parameters.Add(paramCID);
 
@@ -108,6 +123,57 @@ namespace SQLLibrary
             }
 
             return customer;
+        }
+
+        public static Product CreateProduct(int id, int price, string pictureUrl, int stocknr, int soldnr, string productDescription)
+        {
+
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+                idParam.Value = id;
+                command.Parameters.Add(idParam);
+
+                SqlParameter priceParam = new SqlParameter("@price", SqlDbType.Int);
+                priceParam.Value = price;
+                command.Parameters.Add(priceParam);
+
+                SqlParameter pictureUrlParam = new SqlParameter("@pictureurl", SqlDbType.VarChar);
+                pictureUrlParam.Value = pictureUrl;
+                command.Parameters.Add(pictureUrlParam);
+
+                SqlParameter stocknrParam = new SqlParameter("@stocknr", SqlDbType.Int);
+                stocknrParam.Value = stocknr;
+                command.Parameters.Add(stocknrParam);
+
+                SqlParameter soldnrParam = new SqlParameter("@soldnr", SqlDbType.Int);
+                soldnrParam.Value = soldnr;
+                command.Parameters.Add(soldnrParam);
+
+                SqlParameter productDescriptionParam = new SqlParameter("@productdescription", SqlDbType.VarChar);
+                productDescriptionParam.Value = productDescription;
+                command.Parameters.Add(productDescriptionParam);
+
+                command.CommandText = $"insert into Product (ID, Price, PictureUrl, Stocknr, Soldnr, ProductDescription) values (@id, @price, @pictureurl, @stocknr, @soldnr, @productDescription)";
+                int result = command.ExecuteNonQuery();
+                if (result > 0)
+                    return new Product(id, price, pictureUrl, stocknr, soldnr, productDescription);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
         }
     }
 }

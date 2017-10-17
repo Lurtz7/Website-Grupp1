@@ -124,7 +124,6 @@
     <Compile Include="CreateCustomer.aspx.designer.cs">
       <DependentUpon>CreateCustomer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,6 +155,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQLLibrary\SQLLibrary.csproj">
+      <Project>{b63c593a-dce6-4d14-a5bf-36a9945f054e}</Project>
+      <Name>SQLLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
