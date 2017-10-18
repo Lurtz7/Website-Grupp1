@@ -13,6 +13,15 @@ namespace Webshop {
     public partial class WebshopMaster {
         
         /// <summary>
+        /// main_head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder main_head;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace Webshop {
         protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
-        /// Image3 control.
+        /// main_content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder main_content;
         
         /// <summary>
         /// Image4 control.
@@ -83,14 +92,5 @@ namespace Webshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image4;
-        
-        /// <summary>
-        /// main_content control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder main_content;
     }
 }
