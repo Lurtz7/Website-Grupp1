@@ -2,13 +2,14 @@
 
 <!DOCTYPE html>
 
-<script src="Scripts/jquery-3.2.1.js"></script>
-<script src="Scripts/bootstrap.js"></script>
-<script src="Scripts/JavaScript.js"></script>
-<link href="MasterStyle.css" rel="stylesheet" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="Scripts/jquery-3.2.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/JavaScript.js"></script>
+    <link href="MasterStyle.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
@@ -32,6 +33,10 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
         }
     </style>
+
+    <asp:ContentPlaceHolder ID="main_head" runat="server">
+
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -168,16 +173,21 @@
             <div class="Content1">
                 <asp:Image ID="Image2" runat="server" margin-top="-10px" Height="44px" ImageUrl="http://icon-park.com/imagefiles/pin_navy_blue.png" Width="31px" />
             </div>
+            
             <div class="Content2">
-                <asp:Image ID="Image3" runat="server" Height="44px" ImageUrl="http://icon-park.com/imagefiles/pin_green.png" Width="31px" />
+
+                <asp:ContentPlaceHolder ID="main_content" runat="server">
+                <%--<asp:Image ID="Image3" runat="server" Height="44px" ImageUrl="http://icon-park.com/imagefiles/pin_green.png" Width="31px" />--%>
+                  </asp:ContentPlaceHolder>
             </div>
+
             <div class="Content3">
                 <asp:Image ID="Image4" runat="server" Height="44px" ImageUrl="http://icon-park.com/imagefiles/pin_red.png" Width="31px" />
             </div>
         </div>
 
         <div>
-            <asp:ContentPlaceHolder ID="main_content" runat="server"></asp:ContentPlaceHolder>
+            
         </div>
     </form>
 
