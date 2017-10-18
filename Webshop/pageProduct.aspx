@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="pageProduct.aspx.cs" Inherits="kontorsprylar.pageProduct" %>
+﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="pageProduct.aspx.cs" Inherits="Webshop.pageProduct" %>
 
 <asp:Content ContentPlaceHolderID="main_head" runat="server">   
     <link href="StyleSheetWebshop.css" rel="stylesheet" />

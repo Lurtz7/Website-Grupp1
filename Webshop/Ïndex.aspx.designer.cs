@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kontorsprylar {
+namespace Webshop {
     
     
     public partial class WebForm1 {
