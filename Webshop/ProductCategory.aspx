@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="StyleSheetWebshop.css" rel="stylesheet" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
