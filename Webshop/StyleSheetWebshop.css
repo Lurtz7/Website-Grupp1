@@ -4,7 +4,8 @@
     width: 50%;
     /*padding: 2px 2px 2px 2px;*/
     overflow: hidden;
-    margin: auto;
+    margin: 0;
+    float: left;
 }
 
 /*index*/

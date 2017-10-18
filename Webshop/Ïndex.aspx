@@ -1,7 +1,8 @@
 ﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="Ïndex.aspx.cs" Inherits="kontorsprylar.WebForm1" %>
 
 <asp:Content ContentPlaceHolderID="main_head" runat="server">
-    <link href="StyleSheet.css" rel="stylesheet" />
+ 
+    <link href="StyleSheetWebshop.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="main_content" runat="server">
