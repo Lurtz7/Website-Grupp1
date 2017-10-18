@@ -75,6 +75,115 @@ namespace SQLLibrary
             return result;
         }
 
+
+
+        //----------------------------------------------------------------
+
+
+        public static int CreateAddress(Address address)
+        {
+            int result = 0;
+
+            SqlConnection sqlConnection = new SqlConnection();
+
+            sqlConnection.ConnectionString = connString;
+
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("AddAdress2", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter paramStreet = new SqlParameter("@Street", System.Data.SqlDbType.VarChar);
+                paramStreet.Size = 50;
+                paramStreet.Value = address.Street;
+                sqlCommand.Parameters.Add(paramStreet);
+
+                SqlParameter paramCity = new SqlParameter("@City", System.Data.SqlDbType.VarChar);
+                paramCity.Size = 50;
+                paramCity.Value = address.City;
+                sqlCommand.Parameters.Add(paramCity);
+
+                SqlParameter paramZIP = new SqlParameter("@ZIP", System.Data.SqlDbType.VarChar);
+                paramZIP.Size = 7;
+                paramZIP.Value = address.ZIP;
+                sqlCommand.Parameters.Add(paramZIP);
+
+                SqlParameter paramCountry = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
+                paramCountry.Size = 32;
+                paramCountry.Value = address.Country;
+                sqlCommand.Parameters.Add(paramCountry);
+
+                SqlParameter paramAID = new SqlParameter("@AID", System.Data.SqlDbType.Int);
+                paramAID.Direction = System.Data.ParameterDirection.Output;
+                sqlCommand.Parameters.Add(paramAID);
+
+                sqlCommand.ExecuteNonQuery();
+
+                result = int.Parse(paramAID.Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return result;
+        }
+
+        public static int C2A(int cid, int aid)
+        {
+            int result = 0;
+
+            SqlConnection sqlConnection = new SqlConnection();
+
+            sqlConnection.ConnectionString = connString;
+
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("AddC2A", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter paramCID = new SqlParameter("@CID", System.Data.SqlDbType.Int);
+                paramCID.Size = 50;
+                paramCID.Value = cid;
+                sqlCommand.Parameters.Add(paramCID);
+
+                SqlParameter paramAID = new SqlParameter("@AID", System.Data.SqlDbType.Int);
+                paramAID.Size = 50;
+                paramAID.Value = aid;
+                sqlCommand.Parameters.Add(paramAID);
+
+
+                SqlParameter paramC2A = new SqlParameter("@C2A", System.Data.SqlDbType.Int);
+                paramC2A.Direction = System.Data.ParameterDirection.Output;
+                sqlCommand.Parameters.Add(paramC2A);
+
+                sqlCommand.ExecuteNonQuery();
+
+                result = int.Parse(paramC2A.Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return result;
+        }
+
+        //----------------------------------------------------------------
+
+
         public static Customer ValidateLogin(string username, string password)
         {
             Customer customer = null;

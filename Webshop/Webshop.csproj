@@ -91,7 +91,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="kulpenna.jpg" />
     <Content Include="MasterStyle.css" />
-    <Content Include="productPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
@@ -125,13 +124,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="productPage.aspx.cs">
-      <DependentUpon>productPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="productPage.aspx.designer.cs">
-      <DependentUpon>productPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebshopMaster.Master.cs">

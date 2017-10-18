@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLLibrary
 {
-    class Address
+    public class Address
     {
         public int AID { get; set; }
         public string Street { get; set; }
