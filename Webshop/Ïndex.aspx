@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="Ïndex.aspx.cs" Inherits="kontorsprylar.WebForm1" %>
+﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="Ïndex.aspx.cs" Inherits="Webshop.WebForm1" %>
 
 <asp:Content ContentPlaceHolderID="main_head" runat="server">
  

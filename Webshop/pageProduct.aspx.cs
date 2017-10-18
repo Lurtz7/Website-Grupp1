@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace kontorsprylar
+namespace Webshop
 {
     public partial class pageProduct : System.Web.UI.Page
     {
