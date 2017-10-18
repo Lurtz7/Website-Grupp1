@@ -1,34 +1,38 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ïndex.aspx.cs" Inherits="kontorsprylar.WebForm1" %>
+﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="Ïndex.aspx.cs" Inherits="kontorsprylar.WebForm1" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="main_head" runat="server">
+ 
+    <link href="StyleSheetWebshop.css" rel="stylesheet" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<link href="StyleSheet.css" rel="stylesheet" />
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server"> 
-        <div class="tableBody">
+<asp:Content ContentPlaceHolderID="main_content" runat="server">
+    <div class="tableBody">
         <h2>Pennor</h2>
-            <div class="tableRow">
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div> 
-            </div>
+        <div class="tableRow">
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+        </div>
         <h2>Papper</h2>
-            <div class="tableRow">
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div> 
-            </div>
+        <div class="tableRow">
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+        </div>
         <h2>Möbler</h2>
-            <div class="tableRow">
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div>
-            <div class="tableCell"><input class="buttonShow" type="button" value="Visa" /></div> 
-        </div></div>
-     
-    </form>
-</body>
-</html>
+        <div class="tableRow">
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+            <div class="tableCell">
+                <input class="buttonShow" type="button" value="Visa" /></div>
+        </div>
+    </div>
+</asp:Content>
