@@ -19,10 +19,14 @@ namespace Webshop
         {
             Customer customer = new Customer(0, textBoxFirstname.Text, textBoxLastname.Text, textBoxSSN.Text, textBoxEmail.Text, textBoxPassword.Text);
 
-           int CID = MySql.CreateContact(customer);
+            int cid = MySql.CreateContact(customer);
 
-           //int AID = MySql.CreateAdress(Adress);
-            
+            Address address = new Address(0, textBoxStreet.Text, textBoxCity.Text, textBoxZIP.Text, textBoxCountry.Text);
+
+            int aid = MySql.CreateAddress(address);
+
+            int c2a = MySql.C2A(cid, aid);
+
         }
 
     }
