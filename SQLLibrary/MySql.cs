@@ -125,7 +125,7 @@ namespace SQLLibrary
             return customer;
         }
 
-        public static Product CreateProduct(int id, int price, string pictureUrl, int stocknr, int soldnr, string productDescription)
+        public static Product CreateProduct(int price, string pictureUrl, int stocknr, int soldnr, string productDescription)
         {
 
             SqlConnection connection = new SqlConnection(connString);
@@ -133,9 +133,6 @@ namespace SQLLibrary
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
-                idParam.Value = id;
-                command.Parameters.Add(idParam);
 
                 SqlParameter priceParam = new SqlParameter("@price", SqlDbType.Int);
                 priceParam.Value = price;
@@ -157,10 +154,15 @@ namespace SQLLibrary
                 productDescriptionParam.Value = productDescription;
                 command.Parameters.Add(productDescriptionParam);
 
-                command.CommandText = $"insert into Product (ID, Price, PictureUrl, Stocknr, Soldnr, ProductDescription) values (@id, @price, @pictureurl, @stocknr, @soldnr, @productDescription)";
+                SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+                idParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(idParam);
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "AddProduct";
                 int result = command.ExecuteNonQuery();
                 if (result > 0)
-                    return new Product(id, price, pictureUrl, stocknr, soldnr, productDescription);
+                    return new Product(int.Parse(idParam.Value.ToString()), price, pictureUrl, stocknr, soldnr, productDescription);
             }
             catch (Exception)
             {

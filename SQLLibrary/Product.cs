@@ -30,5 +30,10 @@ namespace SQLLibrary
             Soldnr = soldnr;
             ProductDescription = productDescription;
         }
+
+        public override string ToString()
+        {
+            return $"{ID}, {Price}, {PictureUrl}, {Stocknr} {Soldnr}, {ProductDescription}";
+        }
     }
 }
