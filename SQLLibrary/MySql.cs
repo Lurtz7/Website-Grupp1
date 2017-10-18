@@ -286,5 +286,107 @@ namespace SQLLibrary
 
             return null;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static Product UpdateProduct(int idToUpdate, int price, string pictureUrl, int stocknr, int soldnr, string productDescription)
+        {
+
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+
+                SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+                idParam.Value = idToUpdate;
+                command.Parameters.Add(idParam);
+
+                SqlParameter priceParam = new SqlParameter("@price", SqlDbType.Int);
+                priceParam.Value = price;
+                command.Parameters.Add(priceParam);
+
+                SqlParameter pictureUrlParam = new SqlParameter("@pictureurl", SqlDbType.VarChar);
+                pictureUrlParam.Value = pictureUrl;
+                command.Parameters.Add(pictureUrlParam);
+
+                SqlParameter stocknrParam = new SqlParameter("@stocknr", SqlDbType.Int);
+                stocknrParam.Value = stocknr;
+                command.Parameters.Add(stocknrParam);
+
+                SqlParameter soldnrParam = new SqlParameter("@soldnr", SqlDbType.Int);
+                soldnrParam.Value = soldnr;
+                command.Parameters.Add(soldnrParam);
+
+                SqlParameter productDescriptionParam = new SqlParameter("@productdescription", SqlDbType.VarChar);
+                productDescriptionParam.Value = productDescription;
+                command.Parameters.Add(productDescriptionParam);
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "UpdateProduct";
+                int result = command.ExecuteNonQuery();
+                if (result > 0)
+                    return new Product(int.Parse(idParam.Value.ToString()), price, pictureUrl, stocknr, soldnr, productDescription);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
+        }
     }
 }
