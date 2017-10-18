@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productPage.aspx.cs" Inherits="kontorsprylar.pageProduct" %>
+﻿<%@ Page MasterPageFile="~/WebshopMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="productPage.aspx.cs" Inherits="kontorsprylar.pageProduct" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">    
+<asp:Content ContentPlaceHolderID="main_content" runat="server">
+
+
 <link href="StyleSheet.css" rel="stylesheet" />
-    <title></title>
+
     <style type="text/css">
         .auto-style1 {
             width: 30px;
@@ -25,9 +25,7 @@
             height: 31px;
         }
         </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+
         <div class="mainContent">
             <div class="divImageProduct"><img src="kulpenna.jpg" alt="penna" style="width:100%;height:auto" /></div>
             <div class="divProductPrice">
@@ -61,6 +59,6 @@
  </asp:Label></div>
             <asp:Label ID="labelBack" runat="server" Text="Tillbaka"></asp:Label>
         </div>
-    </form>
-</body>
-</html>
+
+    </asp:Content>
+
